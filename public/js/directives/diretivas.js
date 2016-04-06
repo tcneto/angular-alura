@@ -12,6 +12,17 @@ angular.module('minhasDiretivas', []).directive('painel', function() {
 
 	ddo.templateUrl = 'js/directives/painel-cool.html';
 	return ddo;
-}).directive('outra-foto', function(){
+}).directive('minhaFoto', function(){
 
+	var ddo = {};
+
+	ddo.restrict = 'AE';	
+	ddo.scope = {
+
+		url: '@',
+		descricao: '@'
+	};
+
+	ddo.template = '<img class="img-responsive center-block" src="{{url}}" alt="{{descricao}}">';
+	return ddo;
 });

@@ -1,1 +1,39 @@
-<h1 class="text-center">Incluir nova foto</h1>
+<div class="jumbotron jumbotron-fluid">
+    <h1 class="text-left">Angular-JS Pic Manager</h1>
+    <p class="lead">Cadastrar nova foto</p>
+</div>   
+<div class="page-header text-center">
+    <h1>{{foto.titulo}}</h1>
+</div>
+
+<form novalidate name="formFotoCreate" class="row" ng-submit="imprimir()">
+    <div class="col-md-6">
+        <div class="form-group">
+            <label>Título</label>
+            <input ng-model="foto.titulo" name="titulo" class="form-control" maxlength="20" required>
+            <span ng-show="formFotoCreate.$submitted && formFotoCreate.titulo.$error.required" class="form-control alert-danger">
+            	Título obrigatório!
+            </span>
+        </div>
+        <div class="form-group">
+            <label>URL</label>
+            <input ng-model="foto.url" name="url" class="form-control" required>
+            <span ng-show="formFotoCreate.$submitted && formFotoCreate.url.$error.required" class="form-control alert-danger">
+            	URL obrigatória!
+            </span>
+        </div>
+        <div class="form-group">
+            <label>Descrição</label>
+            <textarea ng-model="foto.descricao" name="descricao" class="form-control">
+            </textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Cadastrar
+        </button>
+         <a href="/" class="btn btn-primary">Voltar</a>
+        <hr>
+    </div>
+    <div class="col-md-6">
+        <minha-foto></minha-foto>
+    </div>
+</form>
