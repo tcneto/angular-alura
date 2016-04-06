@@ -10,9 +10,12 @@
     <div class="col-md-6">
         <div class="form-group">
             <label>Título</label>
-            <input ng-model="foto.titulo" name="titulo" class="form-control" maxlength="20" required>
+            <input ng-model="foto.titulo" name="titulo" class="form-control" ng-maxlength="20" required>
             <span ng-show="formFotoCreate.$submitted && formFotoCreate.titulo.$error.required" class="form-control alert-danger">
             	Título obrigatório!
+            </span>
+            <span ng-show="formFotoCreate.$submitted && formFotoCreate.titulo.$error.maxlength" class="form-control alert-danger">
+            	Título deve ter no máximo 20 caracteres!
             </span>
         </div>
         <div class="form-group">
@@ -34,6 +37,6 @@
         <hr>
     </div>
     <div class="col-md-6">
-        <minha-foto></minha-foto>
+        <minha-foto url="{{foto.url}}" descricao="{{foto.descricao}}"></minha-foto>
     </div>
 </form>
