@@ -1,0 +1,16 @@
+<div class="jumbotron jumbotron-fluid">
+    <h1 class="text-left">Angular-JS PicFilter</h1>
+    <p class="lead">Primeiro aplicativo com AngularJS + Bootstrap</p>
+</div>   
+<div class="row">
+    <div class="col-md-12">
+        <form>
+            <input ng-model="filtrofoto" ng-model-options="{debounce: 500}" class="form-control" placeholder="Filtrar">
+        </form>
+    </div>
+</div>    
+<div class="row">
+    <painel class="col-md-2 painel-animado" ng-repeat="foto in fotos | filter: filtrofoto" nome="{{foto.titulo}}">
+        <img class="img-responsive center-block" src="{{foto.url}}" alt="{{foto.texto}}">      
+    </painel>
+</div>    
