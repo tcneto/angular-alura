@@ -20,5 +20,4 @@ angular.module('alurapic', ['minhasDiretivas', 'ngAnimate', 'ngRoute']).config(
 	$routeProvider.otherwise({
 		redirectTo: '/invalida'
 	});
-
 });

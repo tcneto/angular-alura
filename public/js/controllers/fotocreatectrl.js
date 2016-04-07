@@ -1,16 +1,19 @@
 angular.module('alurapic').controller('FotoCreateController', function($scope, $http) {
 
 	$scope.foto = {};	
-	$scope.imprimir = function(){
+	$scope.cadastrar = function() {
 
-		$http.post('v1/fotos', $scope.foto).success(function() {
+		if ($scope.formFotoCreate.$valid) {
+		
+			$http.post('v1/fotos', $scope.foto).success(function() {
+			
+				$scope.mensagem = 'Foto cadastrada com sucesso!';
+				$scope.foto = {};
+			}).error(function(erro) {
 
-			console.log($scope.foto);
-			console.log('Foto cadastrada!');
-			$scope.foto = {};
-		}).error(function(erro) {
-
-			console.log(erro);
-		});		
+				$scope.mensagem = 'Foto não cadastrada.'
+				console.log(erro);
+			});
+		}
 	};
 });
