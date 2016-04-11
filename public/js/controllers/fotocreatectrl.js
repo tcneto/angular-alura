@@ -1,6 +1,8 @@
 angular.module('alurapic').controller('FotoCreateController', function($scope, $http) {
 
-	$scope.foto = {};	
+	$scope.foto = {};
+	$scope.mensagem = '';
+	
 	$scope.cadastrar = function() {
 
 		if ($scope.formFotoCreate.$valid) {
