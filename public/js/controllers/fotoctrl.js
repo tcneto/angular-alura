@@ -2,7 +2,8 @@ angular.module('alurapic').controller('FotoController', function($scope, $http) 
 
 	$scope.fotos = [];
 	$scope.filtro = '';
-
+	$scope.mensagem = '';
+	
 	$http.get('v1/fotos').success(function(fotos) {
 
 		$scope.fotos = fotos;
@@ -10,4 +11,17 @@ angular.module('alurapic').controller('FotoController', function($scope, $http) 
 
 		console.log(erro);
 	});
+	
+	$scope.excluir = function(foto) {
+		
+		$http.delete('v1/fotos/' + foto._id).success(function() {
+			
+				console.log('Foto ' + foto.titulo + ' foi!');
+				$scope.mensagem = 'Foto ' + foto. titulo + ' excluída com sucesso!';
+		}).error(function(erro) {
+			
+				$scope.mensagem = 'Foto não excluída';
+				console.log(erro);
+		});
+	};
 });

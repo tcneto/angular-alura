@@ -12,6 +12,11 @@ angular.module('alurapic', ['minhasDiretivas', 'ngAnimate', 'ngRoute']).config(
 		templateUrl: '/partials/foto-create.html',
 		controller: 'FotoCreateController'		
 	});
+	
+	$routeProvider.when('/fotos/alt', {
+		templateUrl: '/partials/foto-update.html',
+		controller: 'FotoUpdateController'		
+	});	
 
 	$routeProvider.when('/invalida', {
 		templateUrl: '/partials/invalida.html'		
