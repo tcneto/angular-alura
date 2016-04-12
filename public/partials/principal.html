@@ -20,7 +20,7 @@
 <div class="row">
     <painel class="col-md-2 painel-animado" ng-repeat="foto in fotos | filter: filtrofoto" nome="{{foto.titulo}}">
         <minha-foto url="{{foto.url}}" descricao="{{foto.descricao}}"></minha-foto>
-		<a href="" class="btn btn-primary btn-block">Editar</a>
+		<a href="fotos/alter/{{foto._id}}" class="btn btn-primary btn-block">Editar</a>
 		<button class="btn btn-danger btn-block" ng-click="excluir(foto)">Excluir</button
     </painel>
 </div>    
