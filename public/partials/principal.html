@@ -2,12 +2,15 @@
     <h1 class="text-left">Angular-JS Pic Manager</h1>
     <p class="lead">CRUD de fotos</p>
 </div>
-<p ng-show="mensagem.length" class="alert alert-info">{{mensagem}}</p>
+<div ng-show="mensagem.length" class="alert alert-info">
+  <a href="#" class="close" data-dismiss="alert" aria-label="close" ng-click="mensagem = ''">&times;</a>
+  <strong>{{mensagem}}</strong>
+</div>
 <div class="row">
     <div class="col-md-12">
         <form>
             <div class="input-group">                
-                <input ng-model="filtrofoto" ng-model-options="{debounce: 500}" class="form-control" placeholder="Filtrar">
+                <input ng-model="filtrofoto.titulo" ng-model-options="{debounce: 500}" class="form-control" placeholder="Filtrar">
                 <span class="input-group-btn">
                     <a href="fotos/cad" class="btn btn-primary">Nova Foto</a>
                 </span>
@@ -18,7 +21,7 @@
 <br>
 <br>
 <div class="row">
-    <painel class="col-md-2 painel-animado" ng-repeat="foto in fotos | filter: filtrofoto" nome="{{foto.titulo}}">
+    <painel class="col-md-2 painel-animado" ng-repeat="foto in fotos | filter:filtrofoto" nome="{{foto.titulo}}">
         <minha-foto url="{{foto.url}}" descricao="{{foto.descricao}}"></minha-foto>
 		<a href="fotos/alter/{{foto._id}}" class="btn btn-primary btn-block">Editar</a>
 		<button class="btn btn-danger btn-block" ng-click="excluir(foto)">Excluir</button
