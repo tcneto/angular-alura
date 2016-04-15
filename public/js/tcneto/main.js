@@ -9,12 +9,12 @@ angular.module('alurapic', ['minhasDiretivas', 'ngAnimate', 'ngRoute']).config(
 	});
 
 	$routeProvider.when('/fotos/cad', {
-		templateUrl: '/partials/foto-create.html',
+		templateUrl: '/partials/foto-save.html',
 		controller: 'FotoCreateController'		
 	});
 	
 	$routeProvider.when('/fotos/alter/:fotoId', {
-		templateUrl: '/partials/foto-create.html',
+		templateUrl: '/partials/foto-save.html',
 		controller: 'FotoCreateController'		
 	});	
 
