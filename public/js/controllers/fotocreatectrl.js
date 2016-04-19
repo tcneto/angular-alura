@@ -17,7 +17,7 @@ angular.module('alurapic').controller('FotoCreateController', function($scope, $
 	
 	$scope.cadastrar = function() {
 
-		if($scope.formFotoCreate.$valid) {
+		if($scope.formFotoSave.$valid) {
 			
 			if($scope.foto._id) { // alterar
 				
