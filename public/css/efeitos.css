@@ -16,23 +16,6 @@
   transition:transform 0.8s;
 }
 
-.fade.ng-enter {
-  transition:1.5s linear all;
-  opacity:0;
-}
-
-.fade.ng-enter.ng-enter-active {
-  opacity:1;
-}
-
-.fade.ng-leave {
-  transition:1.5s linear all;
-  opacity:1;
-}
-.fade.ng-leave.ng-leave-active {
-  opacity:0;
-}
-
 .form-input-error {
   line-height: 10px;
   opacity: 1;
@@ -42,11 +25,13 @@
   position: absolute;
   color: blue;
 }
+
 .form-input-error.ng-hide-add.ng-hide-add-active,
 .form-input-error.ng-hide-remove.ng-hide-remove-active {
   -webkit-transition: all linear 0.5s;
   transition: all linear 0.5s;
 }
+
 .form-input-error.ng-hide {
   line-height: 0;
   opacity: 0;
