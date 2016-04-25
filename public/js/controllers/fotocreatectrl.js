@@ -1,14 +1,14 @@
-angular.module('alurapic').controller('FotoCreateController', function($scope, $http, $routeParams) {
+angular.module('alurapic').controller('FotoCreateController', function($scope, recursoFoto, $routeParams) {
 
 	$scope.foto = {};
 	$scope.mensagem = '';
 	
 	if($routeParams.fotoId) {
 		
-		$http.get('v1/fotos/' + $routeParams.fotoId).success(function(foto) {
+		recursoFoto.get({fotoId:$routeParams.fotoId}, function(foto) {
 			
 			$scope.foto = foto;
-		}).error(function(erro) {
+		}, function(erro) {
 
 			$scope.mensagem = 'Não foi possível obter a foto.'
 			console.log(erro);
@@ -19,22 +19,22 @@ angular.module('alurapic').controller('FotoCreateController', function($scope, $
 
 		if($scope.formFotoSave.$valid) {
 			
-			if($scope.foto._id) { // alterar
+			if($routeParams.fotoId) { // alterar
 				
-				$http.put('v1/fotos/' + $scope.foto._id, $scope.foto).success(function() {
+				recursoFoto.update({fotoId:$scope.foto._id}, $scope.foto, function() {
 					
 					$scope.mensagem = 'Foto alterada com sucesso!';					
-				}).error(function(erro) {
+				}, function(erro) {
 					
 					$scope.mensagem = 'Foto não alterada.'
 					console.log(erro);
 				});
 			} else { // cadastrar
-				$http.post('v1/fotos', $scope.foto).success(function() {
+				recursoFoto.save($scope.foto, function() {
 				
 					$scope.mensagem = 'Foto cadastrada com sucesso!';
 					$scope.foto = {};
-				}).error(function(erro) {
+				}, function(erro) {
 
 					$scope.mensagem = 'Foto não cadastrada.'
 					console.log(erro);

@@ -1,9 +1,8 @@
-angular.module('alurapic').controller('FotoController', function($scope, $http, $resource) {
+angular.module('alurapic').controller('FotoController', function($scope, recursoFoto) {
 
 	$scope.fotos = [];
 	$scope.filtro = '';
-	$scope.mensagem = '';
-	var recursoFoto = $resource('v1/fotos/:fotoId');
+	$scope.mensagem = '';	
 	
 	recursoFoto.query(function(fotos) {
 
@@ -13,26 +12,17 @@ angular.module('alurapic').controller('FotoController', function($scope, $http, 
 		console.log(erro);
 	});
 	
-	/*$http.get('v1/fotos').success(function(fotos) {
-
-		$scope.fotos = fotos;
-	}).error(function(erro) {
-
-		console.log(erro);
-	});*/
-	
 	$scope.excluir = function(foto) {
 		
-		$http.delete('v1/fotos/' + foto._id).success(function() {
+		recursoFoto.delete({fotoId:foto._id}, function() {
+				
+			var indFoto = $scope.fotos.indexOf(foto);
+			$scope.fotos.splice(indFoto, 1);
+			$scope.mensagem = 'Foto ' + foto. titulo + ' excluída com sucesso!';
+		}, function(erro) {
 			
-				var indFoto = $scope.fotos.indexOf(foto);
-				$scope.fotos.splice(indFoto, 1);
-				console.log('Foto ' + foto.titulo + ' foi!');
-				$scope.mensagem = 'Foto ' + foto. titulo + ' excluída com sucesso!';
-		}).error(function(erro) {
-			
-				$scope.mensagem = 'Foto não excluída';
-				console.log(erro);
+			$scope.mensagem = 'Foto não excluída';
+			console.log(erro);
 		});
 	};
 });
