@@ -4,8 +4,11 @@
 {"titulo":"Samoieda","url":"http://zeedaily.com.br/wp-content/uploads/2016/01/samoieda-476501-MLB20357354639_072015-F.jpg","descricao":"(Lobo) FIlhote de samoieda.","_id":"ZcLrgbYeKutE3VDG"}
 {"titulo":"Stark","url":"http://vignette4.wikia.nocookie.net/gotascent/images/b/ba/Stark_Icon.png","descricao":"House Stark","_id":"jAoWneF4HyuWCIeM"}
 {"url":"https://upload.wikimedia.org/wikipedia/commons/4/42/Rugby_P_icon.png","titulo":"Rugby","descricao":"ícone","grupo":1,"_id":"lkwS7cqMs07GbSg1"}
-{"titulo":"Futebol","url":"http://ukonlinenews.co.uk/wp-content/uploads/2015/03/UEFA-Champions-League-2015-time-table-in-UK-time-450x273.jpg?3e9573","descricao":"The champions!","_id":"qppofFGnhYrYvo3V"}
-{"titulo":"Targaryen","url":"http://www.fastdecals.com/shop/images/detailed/14/targaryensigils03_misc.jpg","descricao":"Brasão Targaryen","grupo":2,"_id":"uRxeW0wQUVhCbmC4"}
 {"titulo":"Casa Stark","url":"https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRUMvQSiaCuwvzm86JMkJRWU3inf089I7dP-hFPOEmVwuxXnDOE","_id":"yEqNw52RMalpDBDz"}
-{"$$deleted":true,"_id":"uRxeW0wQUVhCbmC4"}
-{"$$deleted":true,"_id":"qppofFGnhYrYvo3V"}
+{"titulo":"Samoieda","url":"http://zeedaily.com.br/wp-content/uploads/2016/01/samoieda-476501-MLB20357354639_072015-F.jpg","descricao":"(Lobo) FIlhote de samoieda.","_id":"ZcLrgbYeKutE3VDG","grupo":3}
+{"titulo":"Samoieda","url":"http://zeedaily.com.br/wp-content/uploads/2016/01/samoieda-476501-MLB20357354639_072015-F.jpg","descricao":"(Lobo) FIlhote de samoieda.","_id":"ZcLrgbYeKutE3VDG","grupo":3}
+{"titulo":"F1","url":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSl3qbji8SjcY99tzoD4WkfC8p28mwprITdEGEAwYvJLUxpql9I","descricao":"F1 - Baleia","_id":"PSxFKGiJVDrONcVa","grupo":2}
+{"titulo":"Botao F1","url":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSl3qbji8SjcY99tzoD4WkfC8p28mwprITdEGEAwYvJLUxpql9I","descricao":"F1 - Baleia","_id":"PSxFKGiJVDrONcVa","grupo":2}
+{"titulo":"Botao F1","url":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSl3qbji8SjcY99tzoD4WkfC8p28mwprITdEGEAwYvJLUxpql9I","descricao":"F1 - Baleia","_id":"PSxFKGiJVDrONcVa","grupo":2}
+{"titulo":"Strike de Boliche","url":"http://strikebolichebar.com.br/img/site/307/b/348674.jpg","grupo":1,"_id":"znsoQCWNhGDUnZhb"}
+{"$$deleted":true,"_id":"PSxFKGiJVDrONcVa"}
