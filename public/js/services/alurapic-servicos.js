@@ -10,10 +10,10 @@ angular.module('alurapicServicos', ['ngResource']).factory('recursoFoto',
 	}
 ).factory('salvarFoto', 
 	
-	function(recursoFoto, $q) {
+	function(recursoFoto, $q, $rootScope) {
 
 		var service = {}
-
+		var evento = 'fotoSalva';
 		service.cadastrar = function(foto) {
 
 			return $q(function(resolve, reject) {
@@ -22,7 +22,9 @@ angular.module('alurapicServicos', ['ngResource']).factory('recursoFoto',
 
 					recursoFoto.update({fotoId:foto._id}, foto, function() {
 					
+						$rootScope.$broadcast(evento);
 						resolve({
+														
 							mensagem: 'Foto alterada com sucesso!',
 							inclusao: false
 						});		
@@ -37,6 +39,7 @@ angular.module('alurapicServicos', ['ngResource']).factory('recursoFoto',
 
 					recursoFoto.save(foto, function() {
 						
+						$rootScope.$broadcast(evento);
 						resolve({
 							mensagem: 'Foto cadastrada com sucesso!',
 							inclusao: false
